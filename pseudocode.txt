@@ -1,0 +1,45 @@
+
+forward prop =============================
+INPUT1 = 5
+
+w1 = random
+w2 = random
+w3 = radom
+w4 = random
+bias = 1
+sigfunc = function
+
+inN1 = INPUT1 * w1 + b
+inN2 = INPUT2  * w2 + b
+outN1 = sig(inN1)
+outN2 = sig(inN2)
+
+in01 = outN1 * w3 + outN2 * w4
+out01 = sig(in01)
+
+backprop ========================
+LEARN = something
+TARGET = 5
+TotalError = 1/2((TARGER - out01)**2)
+dTotalError_dw3 = dTotalError_dout01 * dout01_din01 *  din01_dw3
+dTotalError_dw4 = dTotalError_dout01 * dout01_din01 *  din01_dw4
+
+w3 = w3 -  LEARN * dTotalError_dw3
+w4 = w4 - LEARN * dTotalError_dw4
+
+dTotalError_dw1 = dTotalError_outN1 * outN1_inN1 * inN1_w1
+dTotalError_dw2 = dTotalError_outN2 * outN2_inN2 * inN2_w2
+
+w1 = w1 - * LEARN * dTotalError_dw1j
+w2 = w2 - * LEARN * dTotalError_dw12
+
+
+
+
+
+
+
+
+
+
+
